@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment # 26 to 30 || Q # 5</title>
+    <!-- Externally CSS file -->
+    <style>
+        .toss {
+            background-color: rgb(139, 201, 226);
+            text-align: center;
+            margin-top: 5%;
+            color: rgb(2, 26, 49);
+            font-size: 25px;
+        }
+
+        .toss button {
+            padding: 10px 50px;
+            border: none;
+            border-radius: 20px;
+            background-color: rgb(2, 36, 46);
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .toss h4 {
+            color: rgb(2, 21, 26);
+        }
+    </style>
+</head>
+
+<body class="toss">
+    <h1>Coin Toss Simulator!</h1>
+    <button onclick="coinToss()">Toss It!</button>
+    <h4 id="toss1"></h4>
+    <h4 id="toss2"></h4>
+    <a href="sixth_Q.html" style="color: rgb(12, 54, 1); font-size: 20px;">Next!</a>
+
+
+    <script>
+        // Function to simulate a coin toss and return "Heads" or "Tails"
+        function tossResult() {
+            return Math.random() < 0.5 ? "Heads" : "Tails";
+        }
+
+        function coinToss() {
+            // Simulate toss for Player 1
+            let player1 = tossResult();
+            
+            // Ensure Player 2 has the opposite result of Player 1
+            let player2 = player1 === "Heads" ? "Tails" : "Heads";
+
+            // Display the results !
+            document.getElementById("toss1").innerHTML = "<u>Player 1:</u> <br><br>Random Coin Value: " + player1;
+            document.getElementById("toss2").innerHTML = "<u>Player 2:</u> <br><br>Random Coin Value: " + player2;
+        }
+    </script>
+</body>
+
+</html>

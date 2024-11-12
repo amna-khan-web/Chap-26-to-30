@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment #26 to 30 || Q #1</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <!-- Internal CSS -->
+    <style>
+        .background {
+            background-color: rgb(230, 139, 139);
+            font-weight: bold;
+            text-align: center;
+            color: rgb(3, 3, 70);
+            margin-top: 10%;
+            
+        }
+    </style>
+</head>
+
+<body class="background">
+    <script>
+        function value(num) {
+            if (num < 0) {
+                return -num;
+            } else {
+                return num;
+            }
+        }
+
+        // Input from the user
+        let number = parseFloat(prompt("Enter a number: "));
+
+        // Displaying the absolute value
+        document.write("<h2>The absolute value of " + number + " is " + value(number) + "</h2><br><br>");
+    </script>
+
+    <a href="fourth_Q.html" style="color: rgb(12, 54, 1); font-size: 20px;">Next!</a>
+</body>
+
+</html>

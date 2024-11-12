@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment # 26 to 30 || Q # 8</title>
+
+    <!-- Internally CSS Apply -->
+    <style>
+        .questions {
+            display: grid;
+            height: 70vh;
+            margin: 0;
+            place-items: center;
+            background-color: rgb(199, 238, 220);
+        }
+
+        .box {
+            box-shadow: 2px 13px 17px 3px black;
+            padding: 50px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        button {
+            border: none;
+            background-color: rgb(2, 58, 58);
+            border-radius: 10px;
+            color: white;
+            padding: 5px 30px;
+        }
+
+        h1 {
+            color: rgb(3, 52, 65);
+        }
+
+        #userGuess {
+            text-align: center;
+            border: 1px solid rgb(4, 79, 92);
+            padding: 4px;
+        }
+
+        #result {
+            color: rgb(54, 3, 27);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="questions">
+    <div class="box">
+        <h1>Guess the Secret Number</h1>
+        <p>Try to guess the secret number between 1 and 10!</p>
+        <input type="number" id="userGuess" placeholder="Enter a number (1-10)">
+        <br><br>
+        <button onclick="checkGuess()">Submit</button>
+
+        <p id="result"></p>
+        <a href="index.html" style="color: rgb(12, 54, 1); font-size: 20px;">End!</a>
+
+    </div>
+
+    <!-- Js Functionality start from here!! -->
+    <script>
+        // Store a random secret number between 1 and 10
+        const secretNumber = Math.floor(Math.random() * 10) + 1;
+
+        function checkGuess() {
+            const userGuess = parseInt(document.getElementById("userGuess").value);
+            const result = document.getElementById("result");
+
+            // Check if the user's guess matches the secret number
+            if (userGuess === secretNumber) {
+                result.textContent = "Congratulations! You guessed the correct number!";
+            } else {
+                result.textContent = "Sorry, try again. The secret number was " + secretNumber;
+            }
+        }
+    </script>
+</body>
+
+</html>

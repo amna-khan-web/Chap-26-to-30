@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment # 26 to 30 || Q # 4</title>
+    <!-- externally css file -->
+     <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body class="dice">
+    <h1>Dice Roll Simulator</h1>
+    <button onclick="rollDice()">Roll the Dice</button>
+    <h3 id="diceResult1"></h3>
+    <h3 id="diceResult2"></h3>
+    <a href="fifth_Q.html" style="color: rgb(12, 54, 1); font-size: 20px;">Next!</a>
+
+    <script>
+        function rollDice() {
+            // Generate random numbers between 1 and 6 for two dice
+            const diceValue1 = Math.floor(Math.random() * 6) + 1;
+            const diceValue2 = Math.floor(Math.random() * 6) + 1;
+
+            // Display both dice results in the same paragraph
+            document.getElementById("diceResult1").innerText = 
+                "Random 🎲Dice value: " + diceValue1;
+            document.getElementById("diceResult2").innerText = 
+                "Random 🎲Dice value: " + diceValue2;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment # 26 to 30 || Q # 7;</title>
+    <style>
+        .questions {
+            display: grid;
+            height: 70vh;
+            margin: 0;
+            place-items: center;
+            background-color: rgb(130, 167, 170);
+        }
+
+        .box {
+            border: 2px solid rgb(3, 60, 70);
+            padding: 50px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        button {
+            border: none;
+            background-color: rgb(2, 58, 58);
+            border-radius: 10px;
+            color: white;
+            padding: 5px 30px;
+        }
+
+        h1 {
+            color: rgb(3, 52, 65);
+        }
+
+        #weightInput {
+            text-align: center;
+            border: 1px solid rgb(4, 79, 92);
+            padding: 4px;
+        }
+
+        #displayWeight {
+            color: rgb(54, 3, 27);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body class="questions">
+        <div class="box">
+            <h1>Enter Your Weight</h1>
+            <input type="text" id="weightInput" placeholder="Enter weight (e.g., 50, 50kgs, 50.2kgs, 50.2kilograms) ">
+            <br><br>
+            <button onclick="parseWeight()">Enter</button>
+
+            <p id="displayWeight"></p>
+
+            <a href="eighth_Q.html" style="color: rgb(12, 54, 1); font-size: 20px;">Next!</a>
+
+        </div>
+
+        <!-- js functionality start from here -->
+        <script>
+            function parseWeight() {
+                let userInput = document.getElementById("weightInput").value;
+                let weight;
+
+                // Remove any spaces and convert to lowercase
+                userInput = userInput.trim().toLowerCase();
+
+                // Check if the input contains 'kgs' or 'kilograms', and remove it
+                if (userInput.includes('kgs') || userInput.includes('kilograms')) {
+                    weight = parseFloat(userInput.replace(/kgs|kilograms/g, '').trim());
+                } else {
+                    // If no 'kgs' or 'kilograms' is included, directly parse the number
+                    weight = parseFloat(userInput);
+                }
+
+                // Display the parsed weight
+                if (!isNaN(weight)) {
+                    document.getElementById("displayWeight").textContent = `Your weight is: ${weight} kg`;
+                } else {
+                    document.getElementById("displayWeight").textContent = "Invalid input. Please enter a valid weight.";
+                }
+            }
+        </script>
+    </body>
+
+</html>
